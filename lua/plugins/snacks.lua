@@ -79,6 +79,11 @@ opts.indent = {
 opts.bigfile = { enabled = true }
 
 -- ===============================
+-- Explorer Configuration
+-- ===============================
+opts.explorer = { enabled = false }
+
+-- ===============================
 -- Dashboard Configuration
 -- ===============================
 ---@class snacks.dashboard.Config
@@ -120,29 +125,9 @@ opts.dashboard = {
   },
   sections = {
     { section = "header" },
-    {
-      pane = 2,
-      section = "terminal",
-      -- cmd = "fastfetch --logo none | rg --colors=match:fg:cyan '|||||󰝚|'",
-      cmd = "pipes.sh -t 1",
-      height = 8,
-      padding = 2,
-    },
-    { section = "keys", gap = 1, padding = 1 },
-    { pane = 2, icon = "", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-    { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-    {
-      pane = 2,
-      icon = " ",
-      title = "Git Status",
-      section = "terminal",
-      enabled = vim.fn.isdirectory(".git") == 1,
-      cmd = "hub status --short --branch --renames",
-      height = 5,
-      padding = 1,
-      ttl = 5 * 60,
-      indent = 3,
-    },
+    { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+    { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+    { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
     { section = "startup" },
   },
 }
